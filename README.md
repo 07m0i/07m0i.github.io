@@ -3,198 +3,189 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TikTok Following Analyzer | 07M0i</title>
+    <title>TIKTOK FUCKER v1.0 | 07M0i</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
         
         :root {
-            --primary: #25F4EE;
-            --secondary: #FE2C55;
-            --dark: #010101;
-            --light: #FFFFFF;
-            --gray: #F1F1F2;
+            --hacker-green: #00ff41;
+            --matrix-dark: #0d0208;
+            --glow: 0 0 10px var(--hacker-green);
         }
         
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, var(--dark), #1A1A1D);
-            color: var(--light);
-            min-height: 100vh;
+            background: var(--matrix-dark);
+            color: var(--hacker-green);
+            font-family: 'JetBrains Mono', monospace;
             overflow-x: hidden;
-            background-image: 
-                radial-gradient(circle at 25% 25%, rgba(37, 244, 238, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 75% 75%, rgba(254, 44, 85, 0.1) 0%, transparent 50%);
+            line-height: 1.6;
         }
         
         .container {
-            max-width: 1200px;
+            max-width: 900px;
             margin: 0 auto;
             padding: 2rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
+            border: 1px solid var(--hacker-green);
+            box-shadow: var(--glow);
+            background: rgba(13, 2, 8, 0.8);
         }
         
-        .creator-text {
-            font-size: 1.5rem;
+        h1 {
+            text-align: center;
+            text-shadow: var(--glow);
             margin-bottom: 2rem;
-            background: linear-gradient(to right, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
             font-weight: 700;
-            text-shadow: 0 0 10px rgba(37, 244, 238, 0.3);
-            animation: glow 2s infinite alternate;
+            letter-spacing: -1px;
         }
         
-        @keyframes glow {
-            from {
-                text-shadow: 0 0 10px rgba(37, 244, 238, 0.3);
-            }
-            to {
-                text-shadow: 0 0 20px rgba(37, 244, 238, 0.6), 0 0 30px rgba(254, 44, 85, 0.4);
-            }
-        }
-        
-        .analyzer-box {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 3rem;
-            width: 100%;
-            max-width: 600px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+        .tagline {
             text-align: center;
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
+            margin-bottom: 3rem;
+            border-bottom: 1px dashed var(--hacker-green);
+            padding-bottom: 1rem;
         }
         
-        .analyzer-box::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(
-                to bottom right,
-                transparent 0%,
-                transparent 45%,
-                rgba(37, 244, 238, 0.1) 50%,
-                transparent 55%,
-                transparent 100%
-            );
-            animation: rotate 20s linear infinite;
-            z-index: -1;
+        .input-box {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
         }
         
-        @keyframes rotate {
-            from {
-                transform: rotate(0deg);
-            }
-            to {
-                transform: rotate(360deg);
-            }
-        }
-        
-        .username-box {
-            background: rgba(255, 255, 255, 0.1);
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            border-radius: 12px;
-            padding: 1.5rem;
-            margin: 2rem 0;
-            transition: all 0.3s ease;
-        }
-        
-        .username-box:hover {
-            border-color: var(--primary);
-            box-shadow: 0 0 15px rgba(37, 244, 238, 0.3);
-        }
-        
-        .username-input {
+        input {
             background: transparent;
-            border: none;
-            width: 100%;
-            color: var(--light);
-            font-size: 1.2rem;
-            text-align: center;
+            border: 1px solid var(--hacker-green);
+            color: var(--hacker-green);
+            padding: 0.8rem 1.5rem;
+            font-family: 'JetBrains Mono', monospace;
+            width: 70%;
             outline: none;
-            padding: 0.5rem;
+            box-shadow: var(--glow);
         }
         
-        .username-input::placeholder {
-            color: rgba(255, 255, 255, 0.5);
+        input::placeholder {
+            color: rgba(0, 255, 65, 0.5);
         }
         
-        .analyze-btn {
-            background: linear-gradient(to right, var(--primary), var(--secondary));
-            border: none;
-            color: var(--light);
-            padding: 1rem 2rem;
-            font-size: 1rem;
-            font-weight: 600;
-            border-radius: 50px;
+        button {
+            background: transparent;
+            border: 1px solid var(--hacker-green);
+            color: var(--hacker-green);
+            padding: 0.8rem 2rem;
+            font-family: 'JetBrains Mono', monospace;
             cursor: pointer;
-            transition: all 0.3s ease;
-            margin-top: 1rem;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            margin-left: 0.5rem;
+            box-shadow: var(--glow);
+            transition: all 0.3s;
         }
         
-        .analyze-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-        }
-        
-        .analyze-btn:active {
-            transform: translateY(1px);
+        button:hover {
+            background: rgba(0, 255, 65, 0.1);
         }
         
         .results {
+            border: 1px solid var(--hacker-green);
+            padding: 1.5rem;
             margin-top: 2rem;
-            text-align: left;
-            width: 100%;
+            box-shadow: var(--glow);
             display: none;
         }
         
-        .result-card {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 12px;
-            padding: 1.5rem;
-            margin-bottom: 1rem;
-            border-left: 4px solid var(--primary);
+        .result-line {
+            margin: 0.5rem 0;
+            font-size: 0.9rem;
         }
         
-        .floating-icons {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
+        .signature {
+            text-align: right;
+            margin-top: 3rem;
+            font-style: italic;
+            opacity: 0.7;
         }
         
-        .floating-icon {
-            position: absolute;
-            opacity: 0.1;
-            animation: float 15s infinite linear;
+        .blink {
+            animation: blink 1s infinite;
         }
         
-        @keyframes float {
-            0% {
-                transform: translateY(0) rotate(0deg);
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        
+        /* Terminal-like typing effect */
+        .typing {
+            border-right: 2px solid var(--hacker-green);
+            animation: typing 0.5s step-end infinite alternate;
+        }
+        
+        @keyframes typing {
+            from { border-color: transparent; }
+            to { border-color: var(--hacker-green); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>TIKTOK FUCKER v1.0</h1>
+        <div class="tagline">
+            [ EXTRACTING FOLLOWING LISTS SINCE 2024 | PRIVATE ACCOUNTS? NO PROBLEM ]
+        </div>
+        
+        <div class="input-box">
+            <input type="text" id="username" placeholder="@username" class="typing">
+            <button id="analyze-btn">EXECUTE</button>
+        </div>
+        
+        <div class="results" id="results">
+            <div class="result-line">> INITIALIZING TIKTOK API BYPASS...</div>
+            <div class="result-line">> SCRAPING FOLLOWING DATA...</div>
+            <div class="result-line">> ANALYZING ENGAGEMENT PATTERNS...</div>
+            <div class="result-line">> FOUND <span id="count">0</span> FOLLOWING ACCOUNTS</div>
+            <div class="result-line">> PRIVATE STATUS: <span id="private-status">UNKNOWN</span></div>
+            <div class="result-line">> MOST ACTIVE TIME: <span id="active-time">--:--</span></div>
+            <div class="result-line">> VERIFIED ACCOUNTS: <span id="verified-count">0</span></div>
+            <div class="result-line">> FULL LIST EXPORTED TO: <span id="export-path">./data/<span id="filename">user_data.txt</span></span></div>
+            <div class="result-line">> <span class="blink">READY FOR NEXT TARGET</span></div>
+        </div>
+        
+        <div class="signature">
+            FUCKED BY 07M0i
+        </div>
+    </div>
+    
+    <script>
+        document.getElementById('analyze-btn').addEventListener('click', function() {
+            const username = document.getElementById('username').value.trim();
+            
+            if (!username) {
+                alert('> ERROR: NO USERNAME PROVIDED');
+                return;
             }
-            100% {
-                transform: translateY(-100vh) rotate(360deg);
-            }
-        }
-        
-        @media (max-width: 768px
+            
+            this.textContent = 'SCANNING...';
+            this.disabled = true;
+            
+            // Simulate hacking effect
+            const resultLines = document.querySelectorAll('.result-line');
+            resultLines.forEach((line, index) => {
+                setTimeout(() => {
+                    line.style.opacity = '1';
+                }, index * 300);
+            });
+            
+            setTimeout(() => {
+                document.getElementById('results').style.display = 'block';
+                document.getElementById('count').textContent = Math.floor(Math.random() * 500) + 100;
+                document.getElementById('private-status').textContent = Math.random() > 0.5 ? 'BREACHED' : 'PUBLIC';
+                document.getElementById('active-time').textContent = `${Math.floor(Math.random() * 12) + 1}:${Math.floor(Math.random() * 60).toString().padStart(2, '0')} PM`;
+                document.getElementById('verified-count').textContent = Math.floor(Math.random() * 20);
+                document.getElementById('filename').textContent = `${username}_data.txt`;
+                
+                this.textContent = 'EXECUTE';
+                this.disabled = false;
+            }, 2500);
+        });
+    </script>
+</body>
+</html>
